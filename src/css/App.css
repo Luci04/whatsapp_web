@@ -1,0 +1,252 @@
+body {
+  background-color: #f7f7f7;
+}
+
+.splash {
+}
+
+.splash .logo {
+  height: 175px;
+}
+
+/* Messenger */
+
+.messenger {
+}
+
+.messenger .ribbon {
+  background-color: rgb(0, 186, 161);
+  width: 100%;
+  height: 175px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.messenger .wrapper {
+  background-color: #fff;
+  margin: 60px 75px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.messenger .sidebar {
+  flex: 1;
+  border-right: 1px #ddd solid;
+  max-width: 350px;
+  min-width: 350px;
+}
+
+.messenger .sidebar .head {
+  height: 40px;
+  background: #eee;
+  padding: 10px 15px;
+  border-radius: 3px 0px 0px 0px;
+  -webkit-border-radius: 3px 0px 0px 0px;
+  -moz-border-radius: 3px 0px 0px 0px;
+  -ms-border-radius: 3px 0px 0px 0px;
+  -o-border-radius: 3px 0px 0px 0px;
+}
+
+.messenger .sidebar .head .udp {
+  padding: 0px;
+  border: 0px;
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.messenger .sidebar .head .udp img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.messenger .sidebar .head .actions {
+  flex: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.messenger .sidebar .head .btn {
+  border: 0px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  margin-left: 5px;
+}
+
+.messenger .sidebar .head .btn img {
+  height: 24px;
+}
+
+.messenger .sidebar .head .btn:hover {
+}
+
+.messenger .sidebar .search {
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  border-top: 1px #dedede solid;
+  border-bottom: 1px #dedede solid;
+}
+
+.messenger .sidebar .search .btn {
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 6px 10px;
+}
+
+.messenger .sidebar .search-box {
+  height: 40px;
+  background-color: white;
+  border: 1px solid #ddd;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.messenger .sidebar .search-box .btn {
+  height: 50px;
+}
+
+.messenger .sidebar .search-box .btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.messenger .sidebar .query {
+  width: 100%;
+}
+
+.messenger .sidebar .inbox {
+}
+
+.messenger .sidebar .inbox .item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 15px;
+}
+
+.messenger .sidebar .inbox .item .udp {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  overflow: hidden;
+  margin-right: 10px;
+  background: #ccc;
+}
+
+.messenger .sidebar .inbox .item .udp img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.messenger .sidebar .inbox .item .meta {
+  flex: 1;
+}
+
+.messenger .sidebar .inbox .item .meta .uname {
+  margin-bottom: 3px;
+}
+
+.messenger .sidebar .inbox .item .meta .lastMsg {
+}
+
+.messenger .sidebar .inbox .item .meta .stamp {
+  top: 0;
+  right: 0;
+}
+
+.messenger .chatbox {
+  flex: 2;
+}
+
+.messenger .chatbox .head {
+  height: 40px;
+  background: #eee;
+  border-bottom: 1px solid #dedede;
+  padding: 10px 15px;
+  border-radius: 0px 3px 0px 0px;
+  -webkit-border-radius: 0px 3px 0px 0px;
+  -moz-border-radius: 0px 3px 0px 0px;
+  -ms-border-radius: 0px 3px 0px 0px;
+  -o-border-radius: 0px 3px 0px 0px;
+}
+
+.messenger .chatbox .head .udp {
+  padding: 0px;
+  border: 0px;
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.messenger .chatbox .head .udp img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.messenger .chatbox .head .actions {
+  flex: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.messenger .chatbox .head .btn {
+  border: 0px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  margin-left: 5px;
+}
+
+.messenger .chatbox .head .btn img {
+  height: 24px;
+}
+
+.messenger .chatbox .head .btn:hover {
+}
