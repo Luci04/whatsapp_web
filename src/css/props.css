@@ -1,0 +1,119 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0px;
+  padding: 0px;
+}
+
+.fixed {
+  position: fixed;
+}
+
+select,
+input {
+  outline: none;
+  border: 1px solid #ddd;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+.rel {
+  position: relative;
+}
+
+.absFill {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.abs {
+  position: absolute;
+}
+
+.abc {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-aic {
+  align-items: center;
+}
+
+/* Font */
+
+.font {
+  font-family: "Open Sans", "sans-serif";
+}
+
+.fontn {
+  font-family: "Open Sans", "sans-serif";
+  font-weight: normal;
+}
+
+.fontb {
+  font-family: "Open Sans", "sans-serif";
+  font-weight: bold;
+}
+
+.fontl {
+  font-family: "Open Sans", "sans-serif";
+  font-weight: lighter;
+}
+
+/* Font-Size */
+.s12 {
+  font-size: 12px;
+}
+
+.s14 {
+  font-size: 14px;
+}
+
+.s15 {
+  font-size: 15px;
+}
+.s16 {
+  font-size: 16px;
+}
+.s15 {
+  font-size: 15px;
+}
+.s18 {
+  font-size: 18px;
+}
+.s20 {
+  font-size: 20px;
+}
+
+/* Colors */
+.c777 {
+  color: #777;
+}
+
+.c333 {
+  color: #333;
+}
