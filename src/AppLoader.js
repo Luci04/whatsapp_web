@@ -3,14 +3,19 @@ import AppContext from './AppContext'
 import {
     Route,
     NavLink,
-    HashRouter
+    HashRouter,
+    Redirect
 } from 'react-router-dom';
+
+//Screens
+import Signin from './screens/signin';
 import Messenger from './screens/messenger';
 
 //CSS
 
 import './css/props.css'
 import './css/App.css'
+
 
 import * as firebase from 'firebase';
 
@@ -27,7 +32,6 @@ const firebaseConfig = {
 };
 
 global.firebase.initializeApp(firebaseConfig);
-
 
 //global
 
@@ -47,11 +51,18 @@ function AppLoader(props) {
         global.firebase.auth().onAuthStateChanged(user => {
             if (user) {
                 console.log("You are Signed in");
+                setFireUser(true);
+                return <Redirect to="/" />
+
             } else {
                 console.log("You are guest...");
                 setTimeout(() => {
                     context.setAppLoaded(true);
+                    setFireUser(false);
+                    return <Redirect to="/signin" />
+
                 }, 500);
+
             }
         })
     }
@@ -76,8 +87,8 @@ function AppLoader(props) {
                         <div className="App">
                             <HashRouter>
                                 <div className="app-content">
-                                    <Route path="/" component={Messenger}>
-                                    </Route>
+                                    <Route path="/" component={FireUser == true ? Messenger : Signin} />
+
                                 </div>
                             </HashRouter>
                         </div>

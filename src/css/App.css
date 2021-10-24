@@ -9,6 +9,59 @@ body {
   height: 175px;
 }
 
+/* Account */
+
+.account {
+  width: 400px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.account-verification {
+  width: 400px;
+}
+
+.account .recaptcha {
+  height: 80px;
+  margin-top: 7px;
+}
+
+.account .logo {
+  height: 125px;
+}
+
+.account .tittle {
+  font-size: 50px;
+  margin: 15px 0px 25px 0px;
+}
+.account .iput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin: 8px 0px;
+}
+.account .continue {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0px;
+  padding: 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: #3daedb;
+  color: #fff;
+}
+.account .continue:hover {
+  background-color: #2e92b9;
+}
+
 /* Messenger */
 
 .messenger {
