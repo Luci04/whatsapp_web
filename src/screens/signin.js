@@ -15,8 +15,8 @@ function Signin(props) {
     const [verificationcode, setVerificationCode] = useState(null);
     const [loading, setloading] = useState(false);
     const [mode, setMode] = useState("sendcode");
+    const [confirmationResult, setconfirmationResult] = useState(null);
 
-    let confirmationResult = null;
 
     useEffect(() => {
         if (!window.recaptchaverifier) {
@@ -34,8 +34,9 @@ function Signin(props) {
             setloading(true);
             zuz.Toast._dismissAll();
             var appVerifier = window.recaptchaverifier, phonenumber = dialCode + phone;
-            global.firebase.auth.signInWithPhoneNumber(phonenumber, appVerifier).then(result => {
-                confirmationResult = result;
+            global.firebase.auth().signInWithPhoneNumber(phonenumber, appVerifier).then(result => {
+                setconfirmationResult(result);
+                setVerificationCode(null);
                 setMode("verifycode");
                 setloading(false);
             }).catch(err => {
@@ -52,6 +53,19 @@ function Signin(props) {
     }
 
     const verifycode = () => {
+        setloading(true);
+        zuz.Toast._dismissAll();
+        confirmationResult.confirm(verificationcode)
+            .then(result => {
+                global.firebase.auth().currentUser.getIdToken()
+                    .then(token => {
+
+                    })
+
+            }).catch(err => {
+                console.log(err);
+                zuz.Toast.show({ html: "Invalid confirmation code...", time: 5 });
+            })
 
     }
 
@@ -92,11 +106,11 @@ function Signin(props) {
                 {loading && <Cover />}
                 <img src="http://localhost:3000/ui/logo192.png" className="logo" />
                 <h2 className="s24 fontn title c333">Verify Number</h2>
-                <h2 className="s16 fontn title c333">Enter verification code sent to {phonenumber}</h2>
+                <h2 className="s16 fontn title c333">Enter verification code sent to {dialCode + phonenumber}</h2>
                 <input
                     type="text"
                     className="iput s15 fontn c333"
-                    value={phone}
+                    value={verificationcode}
                     onChange={e => { setVerificationCode(e.target.value == "" ? null : e.target.value) }}
                     placeholder="xxxxxx" />
                 <button onClick={e => { verifycode() }} className="continue s15 fontn cfff">Continue</button>
