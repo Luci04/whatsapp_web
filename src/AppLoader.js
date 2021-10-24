@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import AppContext from './AppContext'
 import {
     Route,
@@ -12,11 +12,49 @@ import Messenger from './screens/messenger';
 import './css/props.css'
 import './css/App.css'
 
+import * as firebase from 'firebase';
+
+global.firebase = firebase;
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCT0Trr9RwX4RYYdNgUb1JdUOmFOGdRuDI",
+    authDomain: "whatsappweb-94139.firebaseapp.com",
+    projectId: "whatsappweb-94139",
+    storageBucket: "whatsappweb-94139.appspot.com",
+    messagingSenderId: "28218934195",
+    appId: "1:28218934195:web:e1b7a52f3155b32593c1c6",
+    measurementId: "G-XVNQZY1209"
+};
+
+global.firebase.initializeApp(firebaseConfig);
+
+
 //global
 
 global.baseurl = "http://localhost:3000/";
 
+global.fire = {
+    me: {
+        ID: 1
+    }
+}
+
 function AppLoader(props) {
+
+    const [FireUser, setFireUser] = useState(false);
+
+    const initFirebase = async (context) => {
+        global.firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                console.log("You are Signed in");
+            } else {
+                console.log("You are guest...");
+                setTimeout(() => {
+                    context.setAppLoaded(true);
+                }, 500);
+            }
+        })
+    }
 
     const splash = () => {
         return (
@@ -27,9 +65,7 @@ function AppLoader(props) {
     }
 
     const loadApp = async (context) => {
-        setTimeout(() => {
-            context.setAppLoaded(true);
-        }, 1000);
+        await initFirebase(context);
     }
 
     return (

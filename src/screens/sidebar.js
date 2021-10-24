@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import InboxItem from "./inboxitem";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMessage } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 
 function Sidebar(props) {
 
@@ -44,10 +47,10 @@ function Sidebar(props) {
                 </button>
                 <div className="actions">
                     <button className="btn s24 c777">
-                        <img src="https://img.icons8.com/windows/32/000000/chat--v1.png" />
+                        <FontAwesomeIcon icon={faMessage} />
                     </button>
                     <button className="btn s24 c777">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/menu-2.png" />
+                        <FontAwesomeIcon icon={faEllipsisVertical} />
                     </button>
                 </div>
             </div>

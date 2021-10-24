@@ -45,7 +45,7 @@ body {
 }
 
 .messenger .sidebar .head {
-  height: 40px;
+  height: 30px;
   background: #eee;
   padding: 10px 15px;
   border-radius: 3px 0px 0px 0px;
@@ -86,19 +86,16 @@ body {
 }
 
 .messenger .sidebar .head .btn {
+  font-size: 20px;
   border: 0px;
   width: 40px;
-  height: 40px;
+  height: 24px;
   border-radius: 100%;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
   margin-left: 5px;
-}
-
-.messenger .sidebar .head .btn img {
-  height: 24px;
 }
 
 .messenger .sidebar .head .btn:hover {
@@ -202,6 +199,15 @@ body {
   -o-border-radius: 0px 3px 0px 0px;
 }
 
+.messenger .chatbox .head .meta {
+}
+
+.messenger .chatbox .head .meta .usr .name {
+}
+
+.messenger .chatbox .head .meta .usr .lo {
+}
+
 .messenger .chatbox .head .udp {
   padding: 0px;
   border: 0px;
@@ -213,6 +219,7 @@ body {
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
+  margin-right: 10px;
 }
 
 .messenger .chatbox .head .udp img {
@@ -233,6 +240,7 @@ body {
 }
 
 .messenger .chatbox .head .btn {
+  font-size: 20px;
   border: 0px;
   width: 40px;
   height: 40px;
@@ -249,4 +257,128 @@ body {
 }
 
 .messenger .chatbox .head .btn:hover {
+}
+
+.messenger .chatbox .sendbox {
+  position: absolute;
+  height: 50px;
+  background: #f7f7f7;
+  padding: 5px 10px;
+  border-radius: 0px 0px 3px 0px;
+  -webkit-border-radius: 0px 0px 3px 0px;
+  -moz-border-radius: 0px 0px 3px 0px;
+  -ms-border-radius: 0px 0px 3px 0px;
+  -o-border-radius: 0px 0px 3px 0px;
+  border-top: 1px #efefef solid;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.16);
+}
+
+.messenger .chatbox .sendbox .btn {
+  border: 0px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(204, 204, 204, 0);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  margin-left: 5px;
+}
+
+.messenger .chatbox .sendbox .btn:hover {
+}
+
+.messenger .chatbox .send-txt {
+  flex: 1;
+  border: 0px;
+  background: #fff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  margin: 0px 20px;
+}
+
+.messenger .chatbox .chat {
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  background: #e5ddda;
+  overflow: hidden;
+  padding: 15px 30px;
+}
+
+.messenger .chatbox .chat .item {
+  margin: 10px 5px;
+}
+
+.messenger .chatbox .chat .bubble {
+  background: #fff;
+  padding: 0px 20px 10px 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.18);
+}
+
+.messenger .chatbox .chat .bubble::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border: 10px rgba(255, 255, 255, 0) solid;
+  border-top: 10px solid #fff;
+  position: absolute;
+  left: -10px;
+  top: 0px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.messenger .chatbox .chat .me {
+  justify-content: flex-end;
+}
+
+.messenger .chatbox .chat .me .bubble {
+  background-color: #dcf8c6;
+}
+
+.messenger .chatbox .chat .me .bubble::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border: 10px rgba(255, 255, 255, 0) solid;
+  border-top: 10px solid #dcf8c6;
+  position: absolute;
+  right: -10px;
+  top: 0px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  left: auto !important;
+}
+
+.stamp {
+  bottom: 4px;
+  right: 10px;
+}
+
+.stamp .tick {
+  margin: -2px 0px 0px 6px;
+  color: #797979;
 }
