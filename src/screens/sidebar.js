@@ -6,37 +6,74 @@ import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 
 function Sidebar(props) {
 
-    const [list, setlist] = useState([
-        {
-            id: 1,
-            name: "Avinash Shukla",
-            dp: "https://placeimg.com/100/100/people?id=1",
-            lastMsg: "Hello there for now...",
-            stamp: "12:00AM",
-            status: "read"
-        }, {
-            id: 2,
-            name: "Tushar Parte",
-            dp: "https://placeimg.com/100/100/people?id=2",
-            lastMsg: "Hello there for now...",
-            stamp: "12:00AM",
-            status: "read"
-        }, {
-            id: 3,
-            name: "Gaurav Mishra",
-            dp: "https://placeimg.com/100/100/people?id=3",
-            lastMsg: "Hello there for now...",
-            stamp: "12:00AM",
-            status: "read"
-        }
-    ]);
+    const [loaded, setLoaded] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [list, setList] = useState([]);
 
-    let inboxList = [];
 
-    for (let i = 0; i < list.length; i++) {
-        inboxList.push(<InboxItem meta={list[i]} />)
+    useEffect(() => {
+        loadInbox();
+    });
+
+    const loadInbox = async () => {
+        console.log("Loading Inbox");
+        global.firestore
+            .collection("inbox")
+            .get()
+            .then(docs => {
+                if (docs.empty) {
+                    setLoading(false);
+                    setLoaded(true);
+                } else {
+                    docs.forEach(doc => {
+                        console.log(doc.data());
+                    })
+                }
+            })
     }
 
+
+    // const [list, setlist] = useState([
+    //     {
+    //         id: 1,
+    //         name: "Avinash Shukla",
+    //         dp: "https://placeimg.com/100/100/people?id=1",
+    //         lastMsg: "Hello there for now...",
+    //         stamp: "12:00AM",
+    //         status: "read"
+    //     }, {
+    //         id: 2,
+    //         name: "Tushar Parte",
+    //         dp: "https://placeimg.com/100/100/people?id=2",
+    //         lastMsg: "Hello there for now...",
+    //         stamp: "12:00AM",
+    //         status: "read"
+    //     }, {
+    //         id: 3,
+    //         name: "Gaurav Mishra",
+    //         dp: "https://placeimg.com/100/100/people?id=3",
+    //         lastMsg: "Hello there for now...",
+    //         stamp: "12:00AM",
+    //         status: "read"
+    //     }
+    // ]);
+
+    let inboxList = [];
+    if (loading == true && loaded == false) {
+        for (let i = 0; i < 5; i++) {
+            inboxList.push(<InboxItem meta={{ holder: true }} />)
+        }
+    } else {
+        if (list.length > 0) {
+            for (let i = 0; i < list.length; i++) {
+                inboxList.push(<InboxItem meta={list[i]} />)
+            }
+        } else {
+            inboxList.push(
+                <div key="empty-inbox" className="empty-block abs s16 fontn c777">Inbox is Empty</div>
+            )
+        }
+    }
     return (
         <div className="sidebar rel flex flex-col">
 

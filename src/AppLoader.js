@@ -18,7 +18,7 @@ import './css/App.css'
 
 
 import * as firebase from 'firebase';
-
+import "@firebase/firestore";
 global.firebase = firebase;
 
 const firebaseConfig = {
@@ -32,6 +32,7 @@ const firebaseConfig = {
 };
 
 global.firebase.initializeApp(firebaseConfig);
+global.firestore = global.firebase.firestore();
 
 //global
 

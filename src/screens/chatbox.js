@@ -3,51 +3,67 @@ import ChatItem from "./chatItem";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFaceGrin, faPaperclip, faEllipsisVertical, faMicrophone } from '@fortawesome/free-solid-svg-icons';
 
-function Chatbox() {
+function Chatbox(props) {
 
-    const [chat, setChat] = useState([{
-        ID: 1,
-        user: {
-            ID: 123,
-            name: "John Doe"
-        },
-        meta: {
-            type: "text",
-            text: "Hi there!"
-        },
-        stamp: "1:21 PM",
-        status: "sent"
-    }, {
-        ID: 2,
-        user: {
-            ID: 123,
-            name: "John Doe"
-        },
-        meta: {
-            type: "text",
-            text: "Can you help me"
-        },
-        stamp: "1:21 PM",
-        status: "read"
-    }, {
-        ID: 1,
-        user: {
-            ID: global.fire.me.ID,
-            name: "Avinash Shukla"
-        },
-        meta: {
-            type: "text",
-            text: "Hey how can I help ?"
-        },
-        stamp: "1:21 PM",
-        status: "sent"
-    }
+    const { list } = props;
+    const [chat, setChat] = useState([
+        {
+            ID: 1,
+            user: {
+                ID: 123,
+                name: "John Doe"
+            },
+            meta: {
+                type: "text",
+                text: "Hi there!"
+            },
+            stamp: "1:21 PM",
+            status: "sent"
+        }, {
+            ID: 2,
+            user: {
+                ID: 123,
+                name: "John Doe"
+            },
+            meta: {
+                type: "text",
+                text: "Can you help me"
+            },
+            stamp: "1:21 PM",
+            status: "read"
+        }, {
+            ID: 1,
+            user: {
+                ID: global.fire.me.ID,
+                name: "Avinash Shukla"
+            },
+            meta: {
+                type: "text",
+                text: "Hey how can I help ?"
+            },
+            stamp: "1:21 PM",
+            status: "sent"
+        }
     ])
 
+    if (chat.length == 0) {
+        return (
+            <div className="chatbox rel">
+                <div key="empty-inbox" className="empty-block abc abs s16 fontn c777">
+                    <div className="ico s72 icon-filter_list">
+                        Select Conversation from List
+                    </div>
+                </div>
+            </div>
+        )
+    }
     let chatList = [];
 
-    for (let i = 0; i < 3; i++) {
-        chatList.push(<ChatItem meta={chat[i]} />);
+    if (list) {
+
+        for (let i = 0; i < chat.length; i++) {
+            chatList.push(<ChatItem meta={chat[i]} />);
+        }
     }
 
     return (

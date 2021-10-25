@@ -63,6 +63,14 @@ body {
 }
 
 /* Messenger */
+.empty {
+}
+
+.empty .ico {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 .messenger {
 }
@@ -194,6 +202,10 @@ body {
 }
 
 .messenger .sidebar .inbox {
+  flex: 1;
+}
+
+.messenger .sidebar .inbox .empty {
 }
 
 .messenger .sidebar .inbox .item {
@@ -234,6 +246,45 @@ body {
 .messenger .sidebar .inbox .item .meta .stamp {
   top: 0;
   right: 0;
+}
+
+.messenger .sidebar .inbox .holder {
+}
+.messenger .sidebar .inbox .holder .udp {
+}
+.messenger .sidebar .inbox .holder .meta {
+}
+.messenger .sidebar .inbox .item .meta .uname {
+  height: 15px;
+  background-color: #ccc;
+  width: 60%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  animation-name: ScalingWidth;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+.messenger .sidebar .inbox .item .meta .lastMsg {
+  height: 10px;
+  background-color: #e0e0e0;
+  width: 80%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin-top: 5px;
+  animation-name: ScalingWidth;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+}
+.messenger .sidebar .inbox .holder .meta .stamp {
 }
 
 .messenger .chatbox {
